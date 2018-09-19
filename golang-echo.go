@@ -1,8 +1,8 @@
 // created by: WestleyK
 // email: westleyk@nym.hush.com
 // https://github.com/WestleyK/golang-echo
-// date: Sep 18, 2018
-// version-1.0.1
+// date: Sep 19, 2018
+// version-1.0.2
 //
 // MIT License
 //
@@ -34,12 +34,11 @@ package main
 import (
     "fmt"
     "os"
-    "strings"
 )
 
 var (
-    VERSION string = "version-1.0.1"
-    DATE string = "Date: Sep 18, 2018"
+    VERSION string = "version-1.0.2"
+    DATE string = "Date: Sep 19, 2018"
 
     OPTION string = ""
     OPTION2 string = ""
@@ -128,9 +127,6 @@ func check_args(OPTION string) {
         return
     } else if OPTION == "-v" || OPTION == "-version" || OPTION == "--version" {
         version_print()
-        return
-    } else if strings.Contains(OPTION, "-") {
-        fail("option not found!  ", OPTION)
         return
     }
 }
