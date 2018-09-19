@@ -4,3 +4,35 @@
 
 <br>
 <br>
+
+
+## Usage:
+
+```
+ubuntu@ubuntu:~$ golang-echo -help
+usage: $ golang-echo [OPTION] [OPTION]
+      -h | -help | --help (print usage menu)
+      -n [MESSAGE] (no new line)
+      -red [MESSAGE] (print message in givin color)
+      -yello [MESSAGE] (print message in givin color)
+      -green [MESSAGE] (print message in givin color)
+      -blue [MESSAGE] (print message in givin color)
+      -white [MESSAGE] (print message in givin color)
+      -teal [MESSAGE] (print message in givin color)
+      -i | -info | --info (print script info)
+      -v | -version | --version (print script version)
+Source code: https://github.com/WestleyK/golang-echo
+ubuntu@ubuntu:~$ 
+```
+
+
+<br>
+<br>
+
+
+### End README
+
+<br>
+<br>
+
+
