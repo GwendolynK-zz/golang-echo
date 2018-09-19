@@ -2,7 +2,7 @@
 # email: westley@sylabs.io
 # Date: Sep 18, 2018
 # https://github.com/WestleyK/golang-echo
-# Version-1.0.0
+# Version-1.0.1
 #
 #
 # MIT License
@@ -37,24 +37,25 @@ INSTALL_TO = /usr/local/bin/
 
 
 all: $(CODE_NAME)
-	@./$(INFO_GEN)
-	@echo "Compileing code..."
-	go build $(CODE_NAME) $(INFO_NAME)
-	@rm -f $(INFO_NAME)
-	@echo "Done."
-	@echo ">> Do:"
-	@echo "  $$ sudo make install"
+    @chmod +x $(INFO_GEN)
+    @./$(INFO_GEN)
+    @echo "Compileing code..."
+    go build $(CODE_NAME) $(INFO_NAME)
+    @rm -f $(INFO_NAME)
+    @echo "Done."
+    @echo ">> Do:"
+    @echo "  $$ sudo make install"
 
 install:
-	chmod +x $(SCRIPT_NAME)
-	cp -f $(SCRIPT_NAME) $(INSTALL_TO)
+    chmod +x $(SCRIPT_NAME)
+    cp -f $(SCRIPT_NAME) $(INSTALL_TO)
 
 update:
-	rm -f $(SCRIPT_NAME)
-	git pull origin master
+    rm -f $(SCRIPT_NAME)
+    git pull origin master
 
 uninstall:
-	rm $(INSTALL_TO)$(SCRIPT_NAME)
+    rm $(INSTALL_TO)$(SCRIPT_NAME)
 
 
 
