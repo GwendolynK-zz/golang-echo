@@ -30,6 +30,15 @@ ubuntu@ubuntu:~$
 <br>
 
 
+## Known bugs:
+
+ - on MacOS, the `-white` option appears pink.
+ - dose not `error:` on unknown flag.
+
+
+<br>
+<br>
+
 ### End README
 
 <br>
