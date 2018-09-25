@@ -1,8 +1,8 @@
 # Created by: Westley K
 # email: westley@sylabs.io
-# Date: Sep 18, 2018
+# Date: Sep 25, 2018
 # https://github.com/WestleyK/golang-echo
-# Version-1.0.2
+# Version-1.0.3
 #
 #
 # MIT License
@@ -30,9 +30,10 @@
 
 
 CODE_NAME = golang-echo.go
+COMPILE_NAME = golang-echo
 INFO_NAME = golang_echo_gen.go
 INFO_GEN = generator-info.sh
-SCRIPT_NAME = golang-echo
+SCRIPT_NAME = ecgo
 INSTALL_TO = /usr/local/bin/
 
 
@@ -42,6 +43,7 @@ all: $(CODE_NAME)
 	@echo "Compileing code..."
 	go build $(CODE_NAME) $(INFO_NAME)
 	@rm -f $(INFO_NAME)
+	@mv $(COMPILE_NAME) $(SCRIPT_NAME)
 	@echo "Done."
 	@echo ">> Do:"
 	@echo "  $$ sudo make install"
