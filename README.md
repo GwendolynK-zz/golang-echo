@@ -9,7 +9,7 @@
 ## Usage:
 
 ```
-ubuntu@ubuntu:~$ golang-echo -help
+ubuntu@ubuntu:~$ ecgo -help
 usage: $ golang-echo [OPTION] [OPTION]
       -h | -help | --help (print usage menu)
       -n [MESSAGE] (no new line)
