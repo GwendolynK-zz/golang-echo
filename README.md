@@ -8,9 +8,9 @@
 
 ```
 $ cat << EOF | ecgo -red
->hello world
->testing input from pipe
->EOF
+> hello world
+> testing input from pipe
+> EOF
 hello world
 testing input from pipe
 $
