@@ -34,13 +34,14 @@ Quick Demo:
 ```
 ubuntu@ubuntu:~$ ecgo -help
 usage: $ ecgo [OPTION] [OPTION] [OPTION] [MESSAGE]
+input from pipe: $ echo "hello world" | ecgo [OPTION] [OPTION]
       -h | -help | --help
             print usage menu)
       -n [MESSAGE]
             no new line
       -r [OPTION] [OPTION] [MESSAGE]
             dont reset the color.
-      -s [OPTION] [OPTION] [MESSAGE]
+      -s
             resets the color output.
       -e [OPTION] [MESSAGE]
             use the \ options,
@@ -64,7 +65,6 @@ usage: $ ecgo [OPTION] [OPTION] [OPTION] [MESSAGE]
       -v | -version | --version
             print script version)
 Source code: https://github.com/WestleyK/golang-echo
-
 ubuntu@ubuntu:~$ 
 ```
 
