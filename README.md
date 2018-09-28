@@ -23,7 +23,7 @@ Of corse it will output in red.
 
 Quick Demo:
 
-[![asciicast](https://asciinema.org/a/d6oY0Iv0cdFz43SXMuzTwiGmH.png)](https://asciinema.org/a/d6oY0Iv0cdFz43SXMuzTwiGmH)
+[![asciicast](https://asciinema.org/a/QzGD4v7g4x4EoQ8YC6BaVztBY.png)](https://asciinema.org/a/QzGD4v7g4x4EoQ8YC6BaVztBY)
 
 <br>
 <br>
