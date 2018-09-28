@@ -2,6 +2,27 @@
 
 ## Enhanced golang version of echo
 
+<br>
+
+### Input from pipe!
+
+```
+$ cat << EOF | ecgo -red
+>hello world
+>testing input from pipe
+EOF
+hello world
+testing input from pipe
+$
+```
+Of corse it will output in red.
+
+
+<br>
+<br>
+
+Quick Demo:
+
 [![asciicast](https://asciinema.org/a/d6oY0Iv0cdFz43SXMuzTwiGmH.png)](https://asciinema.org/a/d6oY0Iv0cdFz43SXMuzTwiGmH)
 
 <br>
