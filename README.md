@@ -10,7 +10,7 @@
 $ cat << EOF | ecgo -red
 >hello world
 >testing input from pipe
-EOF
+>EOF
 hello world
 testing input from pipe
 $
