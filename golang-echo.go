@@ -1,8 +1,8 @@
 // created by: WestleyK
 // email: westleyk@nym.hush.com
 // https://github.com/WestleyK/golang-echo
-// date: Sep 27, 2018
-// version-1.0.3
+// date: Sep 28, 2018
+// version-1.0.4
 //
 // MIT License
 //
@@ -35,11 +35,12 @@ import (
     "fmt"
     "os"
     "strings"
+    "io/ioutil"    
 )
 
 var (
-    VERSION string = "version-1.0.3"
-    DATE string = "Date: Sep 27, 2018"
+    VERSION string = "version-1.0.4"
+    DATE string = "Date: Sep 28, 2018"
 
     OPTION string = ""
     OPTION2 string = ""
@@ -76,13 +77,14 @@ func info_print() {
 
 func help_menu() {
     fmt.Print("usage: $ ", SCRIPT_NAME, " [OPTION] [OPTION] [OPTION] [MESSAGE]\n")
+    fmt.Print("input from pipe: $ echo \"hello world\" | ", SCRIPT_NAME, " [OPTION] [OPTION]\n")
     fmt.Print("      -h | -help | --help\n")
     fmt.Print("            print usage menu)\n")
     fmt.Print("      -n [MESSAGE]\n")
     fmt.Print("            no new line\n")
     fmt.Print("      -r [OPTION] [OPTION] [MESSAGE]\n")
     fmt.Print("            dont reset the color.\n")
-    fmt.Print("      -s [OPTION] [OPTION] [MESSAGE]\n")
+    fmt.Print("      -s\n")
     fmt.Print("            resets the color output.\n")
     fmt.Print("      -e [OPTION] [MESSAGE]\n")
     fmt.Print("            use the \\ options,\n")
@@ -121,8 +123,18 @@ func fail(err1 string, err2 string) {
     os.Exit(1)
 }
 
+func info_fail(info1 string, info2 string) {
+    fmt.Print(blue, "INFO: ", colorReset, info1)
+    if len(info2) >= 1 {
+        fmt.Print(info2, "\n")
+    }
+}
+
 func reset_color() {
     fmt.Print(colorReset)
+    if len(os.Args[2:]) >= 1 {
+        info_fail("extra argument!\n", "-s only needs one argument.")
+    }
     os.Exit(0)
 }
 
@@ -235,10 +247,37 @@ func main() {
 
     if len(os.Args[1:]) == 0 {
         fmt.Print("\n")
-        //fail("no arguments!\n", "need at least one argument")
     }
 
     arg_len := len(os.Args)
+
+    fi, _ := os.Stdin.Stat()
+    if (fi.Mode() & os.ModeCharDevice) == 0 {
+        bytes, _ := ioutil.ReadAll(os.Stdin)
+        MSG := string(bytes)
+        MSG = strings.TrimSuffix(MSG, "\n")
+
+        if arg_len == 2 {
+            OPTION = os.Args[1]
+            check_args(OPTION)
+        } else if arg_len == 3 {
+            OPTION = os.Args[1]
+            OPTION2 = os.Args[2]
+            check_args(OPTION)
+            check_args(OPTION2)
+        } else if arg_len == 4 {
+            OPTION = os.Args[1]
+            OPTION2 = os.Args[2]
+            OPTION3 = os.Args[3]
+            check_args(OPTION)
+            check_args(OPTION2)
+            check_args(OPTION3)
+        } else if arg_len >= 5 {
+            fail("to many arguments for pipe\n", "")
+        }
+        
+        print_message(color, MSG)
+    }
 
     if arg_len == 2 {
         one_args()

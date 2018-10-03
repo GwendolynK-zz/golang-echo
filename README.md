@@ -2,7 +2,28 @@
 
 ## Enhanced golang version of echo
 
-[![asciicast](https://asciinema.org/a/d6oY0Iv0cdFz43SXMuzTwiGmH.png)](https://asciinema.org/a/d6oY0Iv0cdFz43SXMuzTwiGmH)
+<br>
+
+### Input from pipe!
+
+```
+$ cat << EOF | ecgo -red
+> hello world
+> testing input from pipe
+> EOF
+hello world
+testing input from pipe
+$
+```
+Of corse it will output in red.
+
+
+<br>
+<br>
+
+Quick Demo:
+
+[![asciicast](https://asciinema.org/a/QzGD4v7g4x4EoQ8YC6BaVztBY.png)](https://asciinema.org/a/QzGD4v7g4x4EoQ8YC6BaVztBY)
 
 <br>
 <br>
@@ -13,13 +34,14 @@
 ```
 ubuntu@ubuntu:~$ ecgo -help
 usage: $ ecgo [OPTION] [OPTION] [OPTION] [MESSAGE]
+input from pipe: $ echo "hello world" | ecgo [OPTION] [OPTION]
       -h | -help | --help
             print usage menu)
       -n [MESSAGE]
             no new line
       -r [OPTION] [OPTION] [MESSAGE]
             dont reset the color.
-      -s [OPTION] [OPTION] [MESSAGE]
+      -s
             resets the color output.
       -e [OPTION] [MESSAGE]
             use the \ options,
@@ -43,7 +65,6 @@ usage: $ ecgo [OPTION] [OPTION] [OPTION] [MESSAGE]
       -v | -version | --version
             print script version)
 Source code: https://github.com/WestleyK/golang-echo
-
 ubuntu@ubuntu:~$ 
 ```
 
