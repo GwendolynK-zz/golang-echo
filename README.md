@@ -75,8 +75,8 @@ ubuntu@ubuntu:~$
 
 ## Known bugs:
 
- - on MacOS, the `-white` option appears pink.
- - dose not `error:` on unknown flag.
+ - On MacOS, the `-white` option appears pink.
+ - Does not `error:` an unknown flag.
 
 
 <br>
